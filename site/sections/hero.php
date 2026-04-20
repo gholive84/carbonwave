@@ -1,4 +1,4 @@
-<section class="min-h-screen bg-navy text-white flex items-center pt-[68px] relative overflow-hidden">
+<section data-hero class="min-h-screen bg-navy text-white flex items-center pt-[68px] relative overflow-hidden">
     <!-- YouTube bg video -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <iframe

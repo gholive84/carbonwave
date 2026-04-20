@@ -1,0 +1,23 @@
+:root {
+  --white:        #FFFFFF;
+  --navy:         #0A1128;
+  --navy-light:   #141D3C;
+  --action:       #e30000;
+  --action-dark:  #bf0000;
+  --gray-light:   #F4F5F7;
+  --gray-mid:     #E5E7EB;
+  --text:         #0A1128;
+  --text-muted:   #6B7280;
+  --border:       #E5E7EB;
+  --border-dark:  rgba(255,255,255,0.12);
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius:    4px;
+  --radius-sm: 2px;
+
+  --section-v:  100px;
+  --container:  1200px;
+
+  --transition: all 0.2s ease;
+}

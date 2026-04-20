@@ -1,0 +1,46 @@
+/* ---- 768px ---- */
+@media (max-width: 768px) {
+  :root { --section-v: 64px; }
+
+  .hamburger { display: flex; }
+  .nav, .header .btn { display: none; }
+
+  .hero__title { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .hero__actions .btn--lg { padding: 14px 28px; }
+
+  .video-ia__inner,
+  .metodologia__inner,
+  .service-block__inner,
+  .webapp__inner { grid-template-columns: 1fr; gap: 48px; }
+
+  .service-block__inner--reverse { direction: ltr; }
+
+  .servicos-home__grid { grid-template-columns: 1fr; gap: 2px; }
+
+  .clientes__item { flex: 0 0 33.333%; }
+
+  .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  .portfolio-grid { grid-template-columns: 1fr; }
+
+  .metodologia__pillars { grid-template-columns: 1fr; }
+
+  .cta-banner__inner { flex-direction: column; text-align: center; }
+
+  .webapp__phones { gap: 16px; }
+}
+
+/* ---- 375px ---- */
+@media (max-width: 430px) {
+  .container { padding: 0 16px; }
+
+  .clientes__item { flex: 0 0 50%; }
+
+  .phone-frame { width: 200px; }
+}
+
+/* ---- 1280px+ ---- */
+@media (min-width: 1280px) {
+  .container { padding: 0 40px; }
+}
