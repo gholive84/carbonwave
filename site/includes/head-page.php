@@ -11,14 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <?php
-    $css_files = ['reset','variables','global','components','sections','responsive','inner-pages'];
-    $css_base  = $_SERVER['DOCUMENT_ROOT'] . '/site/assets/css/';
-    foreach ($css_files as $f) {
-        $path = $css_base . $f . '.css';
-        if (!file_exists($path)) continue;
-        $v = filemtime($path);
-        echo "<link rel=\"stylesheet\" href=\"/site/assets/css/{$f}.css?v={$v}\">\n    ";
-    }
+    $css_path = $_SERVER['DOCUMENT_ROOT'] . '/site/assets/css/style.css';
+    $css_v    = file_exists($css_path) ? filemtime($css_path) : time();
+    echo "<link rel=\"stylesheet\" href=\"/site/assets/css/style.css?v={$css_v}\">\n";
     ?>
 
     <link rel="icon" type="image/png" href="/site/assets/img/favicon.png">

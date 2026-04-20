@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy:        #0A1128;
+  --color-navy-light:  #141D3C;
+  --color-action:      #e30000;
+  --color-action-dark: #bf0000;
+  --color-gray-light:  #F4F5F7;
+  --color-gray-mid:    #E5E7EB;
+  --color-muted:       #6B7280;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius-sm: 2px;
+  --radius:    4px;
+}
+
+/* ---- Reveal animation ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* ---- Scroll indicator ---- */
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50%       { transform: scaleY(0.4); opacity: 0.1; }
+}
+.scroll-line::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+  margin: 8px auto 0;
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+
+/* ---- Device frame (browser mockup) ---- */
+.device-screen {
+  aspect-ratio: 16 / 9;
+  background: #0d1a35;
+  overflow: hidden;
+}
+.device-screen video,
+.device-screen iframe { width: 100%; height: 100%; object-fit: cover; border: none; }
+
+/* ---- Phone frame ---- */
+.phone-inner {
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 9/19;
+  background: #0d1a35;
+}

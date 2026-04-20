@@ -1,2 +1,4 @@
 cms/config/config.php
 site/assets/uploads/
+node_modules/
+package-lock.json

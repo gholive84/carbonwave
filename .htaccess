@@ -6,7 +6,10 @@ RewriteEngine On
 # Sitemap dinâmico
 # RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
-# Guideline interno (sem indexação)
+# Páginas internas
+RewriteRule ^servicos/?$  site/paginas/servicos.php [L]
+RewriteRule ^portfolio/?$ site/paginas/portfolio.php [L]
+RewriteRule ^webapp/?$    site/paginas/webapp.php [L]
 RewriteRule ^guideline/?$ site/paginas/guideline.php [L]
 
 # Blog
