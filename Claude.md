@@ -19,14 +19,7 @@ Este arquivo define a stack tecnológica, estrutura de arquivos e processos de d
 
 ## Banco de Dados
 
-```
-Host:   localhost
-DB:     u492702861_carbonwave
-User:   u492702861_carbonwave
-Pass:   gS*4gzJGXbnDc&SJ
-```
-
-Config em: `cms/config/config.php` (fora do git via `.gitignore`)
+Credenciais em `cms/config/config.php` (fora do git via `.gitignore`)
 
 ---
 
@@ -35,9 +28,7 @@ Config em: `cms/config/config.php` (fora do git via `.gitignore`)
 - **URL do CMS**: `/cms/`
 - **Login**: `/cms/login.php`
 - **Instalador**: `/cms/install.php` (rodar uma única vez no servidor; cria tabelas + admin)
-- **Admin criado automaticamente**:
-  - E-mail: `gholive@gmail.com`
-  - Senha: `c@rloS1330`
+- **Admin criado automaticamente** durante a instalação (e-mail e senha definidos em `install.php`)
 
 ---
 
