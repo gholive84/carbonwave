@@ -1,0 +1,135 @@
+<?php
+require_once dirname(__DIR__) . '/boot.php';
+auth_check();
+
+$page_title = 'Páginas';
+$active     = 'paginas';
+$pdo        = db();
+
+// ── Sincronizar páginas da pasta site/paginas/ ──
+$sync_result = null;
+if (isset($_POST['sync'])) {
+    $pages_dir     = SITE_ROOT . '/site/paginas';
+    $files         = glob($pages_dir . '/*.php') ?: [];
+    $skip          = ['guideline.php'];
+    $inserted      = 0;
+
+    // Páginas já registradas (por file_path)
+    $registered = $pdo->query('SELECT file_path FROM paginas')->fetchAll(PDO::FETCH_COLUMN);
+    $registered = array_map('basename', $registered);
+
+    $ins = $pdo->prepare(
+        'INSERT IGNORE INTO paginas (title, slug, url, file_path, status)
+         VALUES (?, ?, ?, ?, ?)'
+    );
+
+    foreach ($files as $file) {
+        $filename = basename($file);
+        if (in_array($filename, $skip)) continue;
+        if (in_array($filename, $registered)) continue;
+
+        // Gera título e slug a partir do nome do arquivo
+        $slug  = '/' . str_replace('.php', '', $filename);
+        $title = ucwords(str_replace(['-', '.php'], [' ', ''], $filename));
+
+        $ins->execute([$title, $slug, $slug, $file, 'active']);
+        if ($ins->rowCount() > 0) $inserted++;
+    }
+
+    $sync_result = $inserted;
+    header('Location: ' . CMS_URL . '/paginas/?synced=' . $inserted);
+    exit;
+}
+
+$synced  = isset($_GET['synced']) ? (int)$_GET['synced'] : null;
+$paginas = $pdo->query('SELECT * FROM paginas ORDER BY created_at ASC')->fetchAll();
+
+require_once dirname(__DIR__) . '/includes/head.php';
+?>
+
+<div class="page-header">
+  <div>
+    <h1 class="page-header__title">Páginas</h1>
+    <p class="page-header__sub">Referências de páginas do site</p>
+  </div>
+  <form method="POST">
+    <button type="submit" name="sync" class="btn btn-primary btn-sm" style="gap:6px;display:flex;align-items:center">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Sincronizar Páginas
+    </button>
+  </form>
+</div>
+
+<?php if ($synced !== null): ?>
+<div class="alert alert--<?= $synced > 0 ? 'success' : 'info' ?>" style="margin-bottom:16px">
+  <?= $synced > 0
+    ? "✅ <strong>{$synced} nova(s) página(s)</strong> registrada(s) com sucesso."
+    : "Nenhuma página nova encontrada. Tudo já estava sincronizado." ?>
+</div>
+<?php endif; ?>
+
+<div class="adm-card">
+  <div class="adm-card__header">
+    <div>
+      <span class="adm-card__title">Páginas do Site</span>
+      <p class="adm-card__note">As páginas são arquivos PHP. O banco armazena apenas referências.</p>
+    </div>
+  </div>
+
+  <?php if (empty($paginas)): ?>
+  <div class="empty-state">
+    <div class="empty-state__icon">
+      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+    </div>
+    <p class="empty-state__title">Nenhuma página cadastrada</p>
+    <p class="empty-state__text">Clique em "Sincronizar Páginas" para detectar automaticamente.</p>
+  </div>
+  <?php else: ?>
+  <div class="adm-table-wrap">
+    <table class="adm-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>URL</th>
+          <th>Arquivo PHP</th>
+          <th>Status</th>
+          <th style="text-align:right">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($paginas as $pg): ?>
+        <tr>
+          <td style="font-weight:600;color:#fff"><?= h($pg['title']) ?></td>
+          <td>
+            <?php if ($pg['url']): ?>
+            <a href="<?= h($pg['url']) ?>" target="_blank" style="color:var(--a-primary)">
+              <?= h($pg['url']) ?>
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:2px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <?php else: ?>
+            <span class="text-muted">—</span>
+            <?php endif; ?>
+          </td>
+          <td><code style="font-size:0.8125rem;color:var(--a-muted)"><?= h(basename($pg['file_path'])) ?></code></td>
+          <td><span class="badge badge--<?= h($pg['status']) ?>"><?= h($pg['status']) ?></span></td>
+          <td class="actions">
+            <?php if ($pg['file_path'] && file_exists($pg['file_path'])): ?>
+            <a href="<?= CMS_URL ?>/paginas/edit-ai.php?id=<?= (int)$pg['id'] ?>"
+               class="btn btn-primary btn-sm"
+               style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+              Alterar com IA
+            </a>
+            <?php else: ?>
+            <span class="text-muted fs-xs">arquivo não encontrado</span>
+            <?php endif; ?>
+          </td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+  <?php endif; ?>
+</div>
+
+<?php require_once dirname(__DIR__) . '/includes/foot.php'; ?>
