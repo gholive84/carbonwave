@@ -135,6 +135,8 @@ include dirname(__DIR__) . '/includes/header.php';
     </div>
 </section>
 
+<?php include dirname(__DIR__) . '/sections/processo.php'; ?>
+
 <!-- CTA -->
 <section class="py-20 bg-action text-white">
     <div class="max-w-[1200px] mx-auto px-6 flex flex-wrap items-center justify-between gap-10">
