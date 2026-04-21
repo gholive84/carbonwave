@@ -17,10 +17,9 @@
     <!-- Background image + overlay -->
     <div class="absolute inset-0">
         <img src="/site/assets/img/quote-bg.jpg" alt=""
-             class="w-full h-full object-cover object-center"
-             style="opacity:.18">
+             class="w-full h-full object-cover object-center">
         <div class="absolute inset-0"
-             style="background:linear-gradient(135deg,rgba(7,14,38,.97) 0%,rgba(7,14,38,.82) 60%,rgba(7,14,38,.92) 100%)"></div>
+             style="background:linear-gradient(135deg,rgba(7,14,38,.82) 0%,rgba(7,14,38,.68) 50%,rgba(7,14,38,.80) 100%)"></div>
     </div>
 
     <div class="max-w-[1200px] mx-auto px-6 relative z-10" id="cw-quote-root">
