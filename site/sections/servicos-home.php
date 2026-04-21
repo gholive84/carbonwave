@@ -22,7 +22,6 @@
             foreach ($servicos as [$num, $title, $text, $href]): ?>
             <a href="<?= $href ?>"
                class="reveal group bg-white p-12 flex flex-col gap-0 hover:bg-navy transition-colors duration-300 cursor-pointer">
-                <span class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-action mb-8"><?= $num ?></span>
                 <h3 class="text-[1.25rem] font-extrabold uppercase tracking-[-0.01em] leading-[1.2] text-navy group-hover:text-white mb-4 transition-colors duration-300"><?= $title ?></h3>
                 <p class="text-[0.9375rem] text-gray-500 leading-[1.65] group-hover:text-white/60 transition-colors duration-300"><?= $text ?></p>
                 <span class="mt-7 text-[0.8125rem] font-bold tracking-[0.06em] uppercase text-action group-hover:text-action flex items-center gap-2">

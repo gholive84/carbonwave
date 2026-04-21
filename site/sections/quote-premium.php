@@ -11,12 +11,16 @@
 }
 </style>
 
-<section class="py-[160px] text-white relative overflow-hidden" style="background:#070E26">
+<section class="py-[160px] text-white relative overflow-hidden"
+         style="background:#070E26">
 
-    <!-- Glow -->
-    <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute left-0 top-0 w-[500px] h-[500px]"
-             style="background:radial-gradient(ellipse at 0% 0%,rgba(0,102,255,.10) 0%,transparent 65%)"></div>
+    <!-- Background image + overlay -->
+    <div class="absolute inset-0">
+        <img src="/site/assets/img/quote-bg.jpg" alt=""
+             class="w-full h-full object-cover object-center"
+             style="opacity:.18">
+        <div class="absolute inset-0"
+             style="background:linear-gradient(135deg,rgba(7,14,38,.97) 0%,rgba(7,14,38,.82) 60%,rgba(7,14,38,.92) 100%)"></div>
     </div>
 
     <div class="max-w-[1200px] mx-auto px-6 relative z-10" id="cw-quote-root">
