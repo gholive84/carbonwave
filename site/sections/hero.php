@@ -1,4 +1,4 @@
-<section data-hero class="min-h-screen bg-navy text-white flex items-center pt-[68px] relative overflow-hidden">
+<section data-hero class="min-h-screen bg-navy text-white flex items-center relative overflow-hidden">
     <!-- YouTube bg video -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <iframe
@@ -13,7 +13,7 @@
         <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,17,40,0.88) 0%, rgba(10,17,40,0.78) 100%)"></div>
     </div>
 
-    <div class="max-w-[1200px] mx-auto px-6 relative z-10 py-24">
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10 pt-[68px]">
         <p class="reveal text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-action mb-6">
             Custom Development · Intelligence · Support
         </p>
