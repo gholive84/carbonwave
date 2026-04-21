@@ -11,8 +11,8 @@
 }
 </style>
 
-<section class="py-[160px] text-white relative overflow-hidden"
-         style="background:#070E26">
+<section class="text-white relative overflow-hidden"
+         style="background:#070E26;padding-top:140px;padding-bottom:140px">
 
     <!-- Background image + overlay -->
     <div class="absolute inset-0">
