@@ -1,6 +1,6 @@
 <?php
 $page_title       = 'Serviços — Carbonwave';
-$page_description = 'Custom Development, Intelligence e Support. Soluções digitais completas para empresas que querem crescer.';
+$page_description = 'Sites e e-commerces de alto padrão com CMS, CRM e IA integrados. Para empresas que não aceitam o comum.';
 include dirname(__DIR__) . '/includes/head-page.php';
 include dirname(__DIR__) . '/includes/header.php';
 ?>
@@ -14,7 +14,7 @@ include dirname(__DIR__) . '/includes/header.php';
             Três frentes.<br>Um único parceiro.
         </h1>
         <p class="text-[1.0625rem] text-white/55 max-w-[520px] leading-[1.7]">
-            Do site ao sistema inteligente — cobrimos cada estágio da sua presença digital.
+            Do site ao e-commerce — cobrimos cada estágio da sua presença digital.
         </p>
     </div>
 </section>
@@ -74,7 +74,7 @@ include dirname(__DIR__) . '/includes/header.php';
                     Intelligence
                 </h2>
                 <p class="text-[1rem] text-white/60 leading-[1.75] mb-7">
-                    CMS e CRM proprietários com inteligência artificial nativa. Gerencie conteúdo, leads e operações com automação real — não com chatbots genéricos, mas com sistemas treinados para o seu negócio.
+                    CMS e CRM proprietários com inteligência artificial nativa — integrados diretamente ao seu site ou e-commerce. Gerencie conteúdo, leads e conversões com automação real, não com chatbots genéricos.
                 </p>
                 <ul class="flex flex-col gap-3 mb-9">
                     <?php $items = ['CMS com editor assistido por IA', 'CRM com scoring automático de leads', 'Automação de e-mails e notificações', 'Dashboard de métricas em tempo real', 'Integração com WhatsApp e APIs externas'];

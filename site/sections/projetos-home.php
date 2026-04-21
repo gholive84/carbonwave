@@ -21,7 +21,7 @@
             $projetos = [
                 ['title'=>'Projeto Destaque 01', 'tag'=>'Site Institucional', 'href'=>'#', 'img'=>'', 'span'=>'md:col-span-2 md:row-span-2'],
                 ['title'=>'Projeto 02',          'tag'=>'E-commerce',         'href'=>'#', 'img'=>'', 'span'=>''],
-                ['title'=>'Projeto 03',          'tag'=>'Sistema Web',        'href'=>'#', 'img'=>'', 'span'=>''],
+                ['title'=>'Projeto 03',          'tag'=>'Web App',        'href'=>'#', 'img'=>'', 'span'=>''],
                 ['title'=>'Projeto 04',          'tag'=>'Landing Page',       'href'=>'#', 'img'=>'', 'span'=>''],
             ];
             $bgs = ['bg-[#0A1128]','bg-[#141D3C]','bg-[#1a2847]','bg-[#0d1f3c]'];

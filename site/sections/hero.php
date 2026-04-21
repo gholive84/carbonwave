@@ -26,7 +26,7 @@
         </h1>
 
         <p class="reveal reveal-d2 text-[1.0625rem] text-white/60 leading-[1.7] max-w-[500px] mb-10">
-            Desenvolvemos soluções digitais sob medida — do site ao sistema inteligente — para empresas que não aceitam o padrão.
+            Desenvolvemos sites e e-commerces de alto padrão, sob medida, para empresas que não aceitam o comum.
         </p>
 
         <div class="reveal reveal-d3 flex flex-wrap gap-4">

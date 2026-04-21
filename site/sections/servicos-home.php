@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-gray-200">
             <?php
             $servicos = [
-                ['01', 'Custom Development', 'Sites, e-commerces e sistemas desenvolvidos sob medida com IA integrada desde o início.', '/servicos#development'],
+                ['01', 'Custom Development', 'Sites e e-commerces desenvolvidos sob medida com design de alto padrão e IA integrada desde o início.', '/servicos#development'],
                 ['02', 'Intelligence',        'CMS e CRM proprietários com automação, dados em tempo real e sugestões de IA.', '/servicos#intelligence'],
                 ['03', 'Support',             '20 anos de mercado. Consultoria estratégica contínua que vai além do suporte técnico.', '/servicos#support'],
             ];

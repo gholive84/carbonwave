@@ -26,7 +26,7 @@
                     <?php
                     $pillars = [
                         ['Adaptabilidade',  'Moldamos a solução ao seu contexto, não o contrário.'],
-                        ['Precisão',        'Código limpo, sistemas sólidos, resultados mensuráveis.'],
+                        ['Precisão',        'Código limpo, entregas sólidas, resultados mensuráveis.'],
                         ['Inteligência',    'IA integrada desde a concepção, não como recurso.'],
                         ['Continuidade',    'Parceria de longo prazo, não projeto e abandono.'],
                     ];

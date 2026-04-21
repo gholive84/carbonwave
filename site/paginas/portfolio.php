@@ -1,6 +1,6 @@
 <?php
 $page_title       = 'Portfólio — Carbonwave';
-$page_description = 'Projetos desenvolvidos pela Carbonwave. Sites, sistemas e soluções digitais de alto padrão.';
+$page_description = 'Projetos desenvolvidos pela Carbonwave. Sites, e-commerces e soluções digitais de alto padrão.';
 include dirname(__DIR__) . '/includes/head-page.php';
 include dirname(__DIR__) . '/includes/header.php';
 ?>
@@ -22,7 +22,7 @@ include dirname(__DIR__) . '/includes/header.php';
     $projetos = [
         ['title' => 'Projeto 01', 'tag' => 'Site Institucional', 'href' => '#', 'img' => ''],
         ['title' => 'Projeto 02', 'tag' => 'E-commerce',         'href' => '#', 'img' => ''],
-        ['title' => 'Projeto 03', 'tag' => 'Sistema Web',        'href' => '#', 'img' => ''],
+        ['title' => 'Projeto 03', 'tag' => 'Landing Page',       'href' => '#', 'img' => ''],
         ['title' => 'Projeto 04', 'tag' => 'Landing Page',       'href' => '#', 'img' => ''],
         ['title' => 'Projeto 05', 'tag' => 'CRM Customizado',    'href' => '#', 'img' => ''],
         ['title' => 'Projeto 06', 'tag' => 'App Mobile',         'href' => '#', 'img' => ''],

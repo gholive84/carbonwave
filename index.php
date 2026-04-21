@@ -2,7 +2,7 @@
 define('ROOT', __DIR__);
 
 $page_title       = 'Carbonwave — Custom Development, Intelligence & Support';
-$page_description = 'Desenvolvemos soluções digitais sob medida — do site ao sistema inteligente — para empresas que não aceitam o padrão.';
+$page_description = 'Desenvolvemos sites e e-commerces de alto padrão, sob medida, para empresas que não aceitam o comum.';
 
 include ROOT . '/site/includes/head.php';
 include ROOT . '/site/includes/header.php';
