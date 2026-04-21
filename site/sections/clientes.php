@@ -1,21 +1,24 @@
-<section class="py-16 bg-white border-b border-gray-200">
-    <div class="max-w-[1200px] mx-auto px-6">
-        <p class="text-center text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-gray-400 mb-10">
-            Empresas que confiam na Carbonwave
-        </p>
-        <div class="flex flex-wrap justify-center border-l border-t border-gray-200">
+<section class="py-14 bg-navy border-b border-white/8">
+    <p class="text-center text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-white/30 mb-10 px-6">
+        Empresas que confiam na Carbonwave
+    </p>
+
+    <div class="overflow-hidden">
+        <div class="clients-track">
             <?php
             $clientes = [
                 'Cliente 01', 'Cliente 02', 'Cliente 03',
                 'Cliente 04', 'Cliente 05', 'Cliente 06',
+                'Cliente 07', 'Cliente 08',
             ];
-            foreach ($clientes as $c): ?>
-            <div class="flex-[0_0_33.333%] md:flex-[0_0_16.666%] flex items-center justify-center
-                        p-7 border-r border-b border-gray-200
-                        grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
-                <span class="text-xs font-bold tracking-[0.06em] uppercase text-gray-500"><?= $c ?></span>
-            </div>
-            <?php endforeach; ?>
+            // Render twice for seamless loop
+            for ($i = 0; $i < 2; $i++):
+                foreach ($clientes as $c): ?>
+                <div class="flex items-center justify-center px-16 shrink-0">
+                    <span class="text-[0.8125rem] font-bold tracking-[0.12em] uppercase"
+                          style="color:rgba(255,255,255,0.28)"><?= htmlspecialchars($c) ?></span>
+                </div>
+            <?php endforeach; endfor; ?>
         </div>
     </div>
 </section>
