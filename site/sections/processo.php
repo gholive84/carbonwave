@@ -1,18 +1,13 @@
 <style>
 /* ── Carbonwave · processo ───────────────────────────── */
-.proc-step {
-    position: relative;
-    padding-top: 2.25rem;
-}
-/* Base rule (muted) */
+.proc-step { position: relative; padding-top: 2rem; }
 .proc-step::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 1px;
-    background: rgba(255,255,255,.10);
+    background: #e5e7eb;
 }
-/* Action accent that grows left → right on scroll */
 .proc-step::after {
     content: '';
     position: absolute;
@@ -24,7 +19,6 @@
 }
 .proc-step.proc-on::after { width: 100%; }
 
-/* Giant watermark number */
 .proc-num-bg {
     position: absolute;
     top: .25rem; right: -.25rem;
@@ -32,12 +26,11 @@
     font-weight: 900;
     letter-spacing: -.04em;
     line-height: 1;
-    color: rgba(255,255,255,.05);
+    color: rgba(10,17,40,.04);
     pointer-events: none;
     user-select: none;
 }
 
-/* Content reveal */
 .proc-content {
     opacity: 0;
     transform: translateY(14px);
@@ -49,24 +42,24 @@
 }
 </style>
 
-<section class="py-[120px] bg-navy text-white">
+<section class="py-[100px] bg-white">
     <div class="max-w-[1200px] mx-auto px-6">
 
         <!-- Header -->
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div class="reveal">
-                <p class="text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-white/35 mb-5">Como trabalhamos</p>
-                <h2 class="font-extrabold uppercase tracking-[-0.02em] leading-[1.05]"
-                    style="font-size: clamp(1.75rem, 3vw, 2.75rem)">
+                <p class="text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-action mb-5">Como trabalhamos</p>
+                <h2 class="font-extrabold uppercase tracking-[-0.02em] leading-[1.05] text-navy"
+                    style="font-size:clamp(1.75rem,3vw,2.75rem)">
                     Nosso processo.
                 </h2>
             </div>
-            <p class="reveal reveal-d1 text-[0.9375rem] text-white/40 leading-[1.8] max-w-[360px]">
+            <p class="reveal reveal-d1 text-[0.9375rem] text-gray-400 leading-[1.8] max-w-[360px]">
                 Do primeiro contato à evolução contínua — cada etapa pensada para gerar resultado real.
             </p>
         </div>
 
-        <!-- Steps -->
+        <!-- 4 colunas -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14" id="proc-grid">
             <?php
             $etapas = [
@@ -83,9 +76,9 @@
             <div class="proc-step">
                 <span class="proc-num-bg"><?= $num ?></span>
                 <div class="proc-content">
-                    <p class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-action mb-7"><?= $num ?></p>
-                    <h3 class="text-[1.0625rem] font-extrabold uppercase tracking-[-0.01em] leading-[1.3] text-white mb-4"><?= $title ?></h3>
-                    <p class="text-[0.9375rem] text-white/40 leading-[1.75]"><?= $text ?></p>
+                    <p class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-action mb-6"><?= $num ?></p>
+                    <h3 class="text-[1.0625rem] font-extrabold uppercase tracking-[-0.01em] leading-[1.3] text-navy mb-4"><?= $title ?></h3>
+                    <p class="text-[0.9375rem] text-gray-500 leading-[1.75]"><?= $text ?></p>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -98,9 +91,7 @@
 (function () {
     var grid = document.getElementById('proc-grid');
     if (!grid) return;
-
     var steps = Array.prototype.slice.call(grid.querySelectorAll('.proc-step'));
-
     var obs = new IntersectionObserver(function (entries) {
         if (!entries[0].isIntersecting) return;
         steps.forEach(function (step, i) {
@@ -108,7 +99,6 @@
         });
         obs.disconnect();
     }, { threshold: 0.15 });
-
     obs.observe(grid);
 }());
 </script>

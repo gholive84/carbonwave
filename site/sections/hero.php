@@ -1,5 +1,6 @@
-<section data-hero class="bg-navy text-white relative overflow-hidden" style="min-height:100vh">
-    <!-- YouTube bg video — fills 100% of section -->
+<section data-hero class="min-h-screen bg-navy text-white flex flex-col justify-center pt-[68px] relative overflow-hidden">
+
+    <!-- YouTube bg video — fills entire section -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <iframe
             src="https://www.youtube.com/embed/H41fuhz_gvw?autoplay=1&mute=1&loop=1&playlist=H41fuhz_gvw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
@@ -12,15 +13,15 @@
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,17,40,0.88) 0%,rgba(10,17,40,0.78) 100%)"></div>
     </div>
 
-    <!-- Content centered vertically in the space below the header -->
-    <div class="relative z-10 flex flex-col justify-center" style="min-height:100vh;padding-top:68px">
-    <div class="max-w-[1200px] mx-auto px-6 w-full">
+    <!-- Content -->
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
+
         <p class="reveal text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-action mb-6">
             Custom Development · Intelligence · Support
         </p>
 
         <h1 class="reveal reveal-d1 font-extrabold uppercase leading-[0.95] tracking-[-0.03em] mb-7"
-            style="font-size: clamp(3rem, 7.5vw, 7rem)">
+            style="font-size:clamp(3rem,7.5vw,7rem)">
             Tecnologia que<br>
             <span class="text-action">transforma</span><br>
             negócios.
@@ -40,11 +41,12 @@
                 Ver Portfólio
             </a>
         </div>
-    </div>
+
     </div>
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-line">
         <span class="text-[0.625rem] tracking-[0.12em] uppercase text-white/30">scroll</span>
     </div>
+
 </section>
