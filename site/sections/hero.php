@@ -1,4 +1,4 @@
-<section data-hero class="min-h-screen bg-navy text-white flex flex-col justify-center pt-[68px] relative overflow-hidden">
+<section data-hero class="min-h-screen bg-navy text-white flex flex-col justify-center pt-navbar relative overflow-hidden">
 
     <!-- YouTube bg video — fills entire section -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">

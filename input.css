@@ -63,3 +63,6 @@
   aspect-ratio: 9/19;
   background: #0d1a35;
 }
+
+/* ---- Layout helpers ---- */
+.pt-navbar { padding-top: 68px; }
