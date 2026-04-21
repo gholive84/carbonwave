@@ -70,18 +70,6 @@
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-white/40">Serviço de interesse</label>
-                        <select name="mensagem" class="bg-white/5 border border-white/10 rounded-[4px] px-4 py-3 text-[0.9375rem] text-white/70
-                                                        focus:outline-none focus:border-action focus:bg-white/8 transition-colors appearance-none cursor-pointer">
-                            <option value="">Selecione...</option>
-                            <option value="Custom Development">Custom Development</option>
-                            <option value="Intelligence (CMS/CRM)">Intelligence (CMS/CRM)</option>
-                            <option value="Support & Consultoria">Support & Consultoria</option>
-                            <option value="Outro">Outro</option>
-                        </select>
-                    </div>
-
-                    <div class="flex flex-col gap-2">
                         <label class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-white/40">Mensagem</label>
                         <textarea name="mensagem_detalhes" rows="4" placeholder="Conte um pouco sobre seu projeto..."
                                   class="bg-white/5 border border-white/10 rounded-[4px] px-4 py-3 text-[0.9375rem] text-white placeholder-white/25
