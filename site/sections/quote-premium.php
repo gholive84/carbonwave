@@ -1,39 +1,77 @@
-<section class="py-[130px] text-white relative overflow-hidden" style="background: #070E26">
-    <!-- Subtle radial glow -->
+<style>
+/* ── Carbonwave · quote-premium ──────────────────────── */
+.cw-ql-wrap { overflow: hidden; }
+.cw-ql {
+    display: block;
+    transform: translateY(105%);
+    opacity: 0;
+    transition: transform .9s cubic-bezier(.16,1,.3,1), opacity .6s ease;
+}
+.cw-ql.cw-ql-on {
+    transform: translateY(0);
+    opacity: 1;
+}
+</style>
+
+<section class="py-[130px] text-white relative overflow-hidden" style="background:#070E26">
+
+    <!-- Glow -->
     <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
-             style="background: radial-gradient(ellipse at 50% 0%, rgba(0,102,255,0.12) 0%, transparent 70%)"></div>
+        <div class="absolute left-0 top-0 w-[500px] h-[500px]"
+             style="background:radial-gradient(ellipse at 0% 0%,rgba(0,102,255,.10) 0%,transparent 65%)"></div>
     </div>
 
-    <div class="max-w-[860px] mx-auto px-6 text-center relative z-10">
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10" id="cw-quote-root">
 
-        <!-- Decorative rule -->
-        <div class="flex items-center justify-center gap-5 mb-14 reveal">
-            <div class="h-[1px] w-12 bg-white/15"></div>
-            <div class="w-[6px] h-[6px] rounded-full bg-action opacity-70"></div>
-            <div class="h-[1px] w-12 bg-white/15"></div>
+        <!-- Lines -->
+        <div class="mb-14">
+            <div class="cw-ql-wrap" style="transition-delay:0s">
+                <span class="cw-ql font-extrabold uppercase tracking-[-0.03em] leading-[1.0] text-white/25"
+                      style="font-size:clamp(2.75rem,7vw,5.5rem)">Do briefing</span>
+            </div>
+            <div class="cw-ql-wrap" style="transition-delay:.12s">
+                <span class="cw-ql font-extrabold uppercase tracking-[-0.03em] leading-[1.0] text-white"
+                      style="font-size:clamp(2.75rem,7vw,5.5rem)">ao crescimento,</span>
+            </div>
+            <div class="cw-ql-wrap" style="margin-top:clamp(.5rem,1.5vw,1.25rem);transition-delay:.24s">
+                <span class="cw-ql font-extrabold uppercase tracking-[-0.03em] leading-[1.0] text-action"
+                      style="font-size:clamp(2.75rem,7vw,5.5rem)">cada detalhe</span>
+            </div>
+            <div class="cw-ql-wrap" style="transition-delay:.36s">
+                <span class="cw-ql font-extrabold uppercase tracking-[-0.03em] leading-[1.0] text-action"
+                      style="font-size:clamp(2.75rem,7vw,5.5rem)">é intencional.</span>
+            </div>
         </div>
-
-        <!-- Quote -->
-        <blockquote class="reveal reveal-d1 font-extrabold uppercase tracking-[-0.02em] leading-[1.15] mb-12"
-                    style="font-size: clamp(1.625rem, 3.8vw, 3.125rem)">
-            Enquanto o mercado entrega <span class="text-white/40">templates</span>,
-            nós entregamos <span class="text-action">ativos digitais</span>
-            que trabalham por você —
-            <span class="text-white/40">agora</span> e nos próximos <span class="text-white">10 anos</span>.
-        </blockquote>
 
         <!-- Attribution -->
-        <div class="reveal reveal-d2 flex items-center justify-center gap-5 mb-10">
-            <div class="h-[1px] w-16 bg-white/15"></div>
-            <p class="text-[0.75rem] font-bold tracking-[0.22em] uppercase text-white/30">Carbonwave</p>
-            <div class="h-[1px] w-16 bg-white/15"></div>
+        <div class="cw-ql-wrap" style="transition-delay:.52s">
+            <div class="cw-ql flex items-center gap-5">
+                <div class="h-[2px] w-10 bg-action opacity-60"></div>
+                <p class="text-[0.75rem] font-bold tracking-[0.2em] uppercase text-white/30">Carbonwave · 20 anos de mercado</p>
+            </div>
         </div>
-
-        <!-- Sub-line -->
-        <p class="reveal reveal-d3 text-[0.9375rem] text-white/35 leading-[1.8] max-w-[500px] mx-auto tracking-[0.01em]">
-            20 anos de mercado. Soluções que não só funcionam —<br>mas que transformam negócios de verdade.
-        </p>
 
     </div>
 </section>
+
+<script>
+(function () {
+    var root = document.getElementById('cw-quote-root');
+    if (!root) return;
+
+    var lines = root.querySelectorAll('.cw-ql-wrap');
+
+    var obs = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        lines.forEach(function (wrap, i) {
+            var el = wrap.querySelector('.cw-ql');
+            if (!el) return;
+            el.style.transitionDelay = (i * 0.13) + 's';
+            setTimeout(function () { el.classList.add('cw-ql-on'); }, 60);
+        });
+        obs.disconnect();
+    }, { threshold: 0.25 });
+
+    obs.observe(root);
+}());
+</script>

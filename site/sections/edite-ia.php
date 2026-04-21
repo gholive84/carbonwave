@@ -1,66 +1,103 @@
+<style>
+/* ── Carbonwave · edite-ia mockup ─────────────────────── */
+.cw-mock{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.35)}
+.cw-mock-head{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.cw-mock-chips{padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.cw-mock-chips::-webkit-scrollbar{display:none}
+.cw-chip{font-size:.75rem;color:rgba(255,255,255,.5);padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);white-space:nowrap}
+.cw-messages{padding:16px;min-height:260px;display:flex;flex-direction:column;gap:12px}
+.cw-sys{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.18);border-radius:8px;padding:12px 14px;font-size:.8125rem;color:#86efac;line-height:1.5;text-align:center;font-family:Inter,system-ui,sans-serif}
+.cw-user-msg{align-self:flex-end;max-width:82%;background:rgba(235,64,57,.12);border:1px solid rgba(235,64,57,.22);border-radius:12px 12px 4px 12px;padding:10px 14px;font-size:.875rem;color:#fecaca;line-height:1.55;font-family:Inter,system-ui,sans-serif}
+.cw-ai-msg{align-self:flex-start;max-width:88%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px 12px 12px 4px;padding:10px 14px;font-size:.875rem;color:rgba(255,255,255,.85);line-height:1.6;font-family:Inter,system-ui,sans-serif}
+.cw-typing-bubble{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px 12px 12px 4px;padding:12px 16px;display:flex;gap:5px;align-items:center}
+.cw-publish-bar{padding:0 16px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-family:Inter,system-ui,sans-serif}
+.cw-btn-pub{background:linear-gradient(135deg,#EB4039,#C9302B);color:#fff;border:none;border-radius:8px;padding:9px 14px;font-size:.8125rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.cw-btn-dis{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;font-size:.8125rem;font-weight:600;cursor:pointer}
+.cw-input-bar{padding:12px 16px 16px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:8px;align-items:center}
+.cw-input-fake{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;font-size:.875rem;color:rgba(255,255,255,.25);font-family:Inter,system-ui,sans-serif}
+.cw-ibtn{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:none;cursor:default}
+.cw-ibtn-mic{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)!important}
+.cw-ibtn-send{background:linear-gradient(135deg,#EB4039,#C9302B)}
+
+@keyframes cw-blink{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.cw-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#64748b;animation:cw-blink 1.2s infinite}
+.cw-dot:nth-child(2){animation-delay:.2s}
+.cw-dot:nth-child(3){animation-delay:.4s}
+
+.cw-anim{opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+.cw-anim.cw-on{opacity:1;transform:translateY(0)}
+</style>
+
 <section class="py-[100px] bg-[#F4F5F7]">
     <div class="max-w-[1200px] mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 
-            <!-- Mock AI editor -->
+            <!-- Chat mockup -->
             <div class="reveal order-2 md:order-1">
-                <div class="border border-gray-200 rounded-[8px] overflow-hidden bg-white shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
-                    <!-- Editor bar -->
-                    <div class="h-10 bg-[#ECEEF2] border-b border-gray-200 flex items-center justify-between px-4">
-                        <div class="flex gap-[6px]">
-                            <span class="w-[10px] h-[10px] rounded-full bg-red-300"></span>
-                            <span class="w-[10px] h-[10px] rounded-full bg-yellow-300"></span>
-                            <span class="w-[10px] h-[10px] rounded-full bg-green-300"></span>
+                <div class="cw-mock">
+
+                    <!-- Header -->
+                    <div class="cw-mock-head">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+                            <span style="font-size:.9375rem;font-weight:700;color:#e2e8f0;font-family:Inter,system-ui,sans-serif">Seu projeto</span>
+                            <span style="background:linear-gradient(135deg,#EB4039,#C9302B);color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em">IA DEMO</span>
                         </div>
-                        <span class="text-[0.6875rem] text-gray-400 font-semibold tracking-[0.05em]">Carbonwave CMS · Editor IA</span>
-                        <div class="w-[52px]"></div>
+                        <p style="font-size:.8125rem;color:#64748b;line-height:1.45;font-family:Inter,system-ui,sans-serif">Descreva o que deseja alterar na página inicial. A IA modifica o site em tempo real.</p>
                     </div>
-                    <!-- Chat messages -->
-                    <div class="p-5 flex flex-col gap-4 min-h-[300px]">
-                        <div class="flex justify-end">
-                            <div class="bg-action text-white text-[0.875rem] px-4 py-2.5 rounded-[8px] rounded-tr-[3px] max-w-[80%] leading-[1.55]">
-                                Reescreva o título da home de forma mais impactante
-                            </div>
+
+                    <!-- Quick chips -->
+                    <div class="cw-mock-chips">
+                        <span class="cw-chip">Mude o título do hero</span>
+                        <span class="cw-chip">Troque a cor do CTA</span>
+                        <span class="cw-chip">Adicione uma seção</span>
+                        <span class="cw-chip">Otimize o SEO</span>
+                    </div>
+
+                    <!-- Messages -->
+                    <div class="cw-messages" id="cw-chat-msgs">
+                        <div class="cw-sys">
+                            👋 Olá! Escreva ou grave um áudio descrevendo o que quer alterar. Após a IA gerar as mudanças, você poderá visualizar e publicar.
                         </div>
-                        <div class="flex gap-3 items-start">
-                            <div class="w-7 h-7 rounded-full bg-navy flex items-center justify-center shrink-0 mt-0.5">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <div class="bg-gray-100 text-[0.875rem] text-gray-700 px-4 py-3 rounded-[8px] rounded-tl-[3px] max-w-[82%] leading-[1.6]">
-                                Feito! Novo título: <span class="font-bold text-navy">"Tecnologia que domina mercados."</span>
-                                <br><span class="text-[0.8125rem] text-gray-400 mt-1 inline-block">Salvo em homepage.php · linha 12</span>
-                            </div>
+                        <div class="cw-user-msg cw-anim" id="cw-msg-user" style="display:none">
+                            Mude o título para algo mais impactante
                         </div>
-                        <div class="flex justify-end">
-                            <div class="bg-action text-white text-[0.875rem] px-4 py-2.5 rounded-[8px] rounded-tr-[3px] max-w-[80%] leading-[1.55]">
-                                Adicione um CTA abaixo com o texto "Começar agora"
-                            </div>
+                        <div class="cw-typing-bubble cw-anim" id="cw-typing" style="display:none">
+                            <span class="cw-dot"></span>
+                            <span class="cw-dot"></span>
+                            <span class="cw-dot"></span>
                         </div>
-                        <div class="flex gap-3 items-start">
-                            <div class="w-7 h-7 rounded-full bg-navy flex items-center justify-center shrink-0 mt-0.5">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <div class="bg-gray-100 px-4 py-3 rounded-[8px] rounded-tl-[3px] flex gap-1.5 items-center">
-                                <span class="w-[7px] h-[7px] rounded-full bg-gray-400 animate-bounce" style="animation-delay:0ms"></span>
-                                <span class="w-[7px] h-[7px] rounded-full bg-gray-400 animate-bounce" style="animation-delay:160ms"></span>
-                                <span class="w-[7px] h-[7px] rounded-full bg-gray-400 animate-bounce" style="animation-delay:320ms"></span>
-                            </div>
+                        <div class="cw-ai-msg cw-anim" id="cw-msg-ai" style="display:none">
+                            Site atualizado! (2 arquivo(s) modificado(s)). Confira o preview e publique.
                         </div>
                     </div>
+
+                    <!-- Publish actions -->
+                    <div class="cw-publish-bar cw-anim" id="cw-publish-bar" style="display:none">
+                        <button class="cw-btn-pub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Publicar
+                        </button>
+                        <button class="cw-btn-dis">Desfazer</button>
+                    </div>
+
                     <!-- Input bar -->
-                    <div class="border-t border-gray-200 px-4 py-3 flex items-center gap-3 bg-white">
-                        <input type="text" placeholder="Peça uma alteração ao seu projeto..." disabled
-                               class="flex-1 text-[0.875rem] text-gray-400 bg-transparent outline-none placeholder-gray-300 cursor-default">
-                        <div class="w-8 h-8 rounded-[4px] bg-action/10 flex items-center justify-center shrink-0">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-action,#0066FF)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="cw-input-bar">
+                        <div class="cw-input-fake">Ex: Mude o título para algo mais impactante...</div>
+                        <div class="cw-ibtn cw-ibtn-mic">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                <line x1="12" y1="19" x2="12" y2="23"/>
+                                <line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                        </div>
+                        <div class="cw-ibtn cw-ibtn-send">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                             </svg>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -98,3 +135,64 @@
         </div>
     </div>
 </section>
+
+<script>
+(function () {
+    'use strict';
+    function sleep(ms) { return new Promise(function(r){ setTimeout(r, ms); }); }
+
+    async function showEl(id, display) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.style.display = display || 'block';
+        await sleep(30);
+        el.classList.add('cw-on');
+    }
+
+    async function hideEl(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('cw-on');
+        await sleep(430);
+        el.style.display = 'none';
+    }
+
+    async function runLoop() {
+        while (true) {
+            await sleep(1200);
+            await showEl('cw-msg-user');
+
+            await sleep(1100);
+            await showEl('cw-typing', 'flex');
+
+            await sleep(1900);
+            await hideEl('cw-typing');
+            await showEl('cw-msg-ai');
+
+            await sleep(900);
+            await showEl('cw-publish-bar');
+
+            await sleep(3400);
+
+            await Promise.all([
+                hideEl('cw-msg-user'),
+                hideEl('cw-msg-ai'),
+                hideEl('cw-publish-bar'),
+            ]);
+
+            await sleep(600);
+        }
+    }
+
+    var target = document.getElementById('cw-chat-msgs');
+    if (!target) return;
+
+    var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+            runLoop();
+            obs.disconnect();
+        }
+    }, { threshold: 0.3 });
+    obs.observe(target);
+}());
+</script>
