@@ -24,7 +24,7 @@ if (str_contains($content_type, 'application/json')) {
 $nome     = htmlspecialchars(trim($input['nome'] ?? ''), ENT_QUOTES, 'UTF-8');
 $email    = htmlspecialchars(trim($input['email'] ?? ''), ENT_QUOTES, 'UTF-8');
 $telefone = htmlspecialchars(trim($input['telefone'] ?? ''), ENT_QUOTES, 'UTF-8');
-$mensagem = htmlspecialchars(trim($input['mensagem'] ?? ''), ENT_QUOTES, 'UTF-8');
+$mensagem = htmlspecialchars(trim($input['mensagem_detalhes'] ?? $input['mensagem'] ?? ''), ENT_QUOTES, 'UTF-8');
 $origem   = htmlspecialchars(trim($input['origem'] ?? 'site'), ENT_QUOTES, 'UTF-8');
 
 // Validation

@@ -64,6 +64,24 @@ hamburger?.addEventListener('click', () => hamburger.getAttribute('aria-expanded
 overlay?.addEventListener('click', closeMenu);
 drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+// ---- Phone mask ----
+const telInput = document.querySelector('input[name="telefone"]');
+if (telInput) {
+  telInput.addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 10) {
+      v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    } else if (v.length > 6) {
+      v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, function(_, a, b, c){ return '(' + a + ') ' + b + (c ? '-' + c : ''); });
+    } else if (v.length > 2) {
+      v = v.replace(/^(\d{2})(\d+)$/, '($1) $2');
+    } else if (v.length > 0) {
+      v = '(' + v;
+    }
+    this.value = v;
+  });
+}
+
 // ---- Contact form AJAX ----
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -82,13 +100,13 @@ if (contactForm) {
       const data = await res.json();
 
       msg.classList.remove('hidden', 'bg-red-500/20', 'text-red-400', 'bg-green-500/20', 'text-green-400');
-      if (data.success) {
+      if (data.ok) {
         msg.classList.add('bg-green-500/20', 'text-green-400');
         msg.textContent = 'Mensagem enviada! Retornaremos em breve.';
         contactForm.reset();
       } else {
         msg.classList.add('bg-red-500/20', 'text-red-400');
-        msg.textContent = data.message || 'Erro ao enviar. Tente novamente.';
+        msg.textContent = data.error || 'Erro ao enviar. Tente novamente.';
       }
       msg.classList.remove('hidden');
     } catch {
