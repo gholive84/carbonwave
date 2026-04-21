@@ -12,5 +12,6 @@ include ROOT . '/site/sections/servicos-home.php';
 include ROOT . '/site/sections/projetos-home.php';
 include ROOT . '/site/sections/video-ia.php';
 include ROOT . '/site/sections/metodologia.php';
+include ROOT . '/site/sections/processo.php';
 include ROOT . '/site/sections/contato.php';
 include ROOT . '/site/includes/footer.php';
