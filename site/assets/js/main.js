@@ -23,7 +23,10 @@ if (header) {
     if (logo)   logo.classList.replace('text-navy', 'text-white');
     navLinks.forEach(l => { l.classList.remove('text-navy', 'hover:text-navy'); l.classList.add('text-white/80'); });
     hamburgerBars.forEach(b => b.classList.replace('bg-navy', 'bg-white'));
-    if (waBtn) waBtn.classList.remove('border-navy/30', 'text-navy');
+    if (waBtn) {
+      waBtn.classList.add('header-wa-active');
+      waBtn.classList.remove('border-navy/30', 'text-navy', 'border-white/25', 'text-white');
+    }
   }
 
   function setSolid() {
@@ -32,7 +35,10 @@ if (header) {
     if (logo)   { logo.classList.remove('text-white'); logo.classList.add('text-navy'); }
     navLinks.forEach(l => { l.classList.remove('text-white/80'); l.classList.add('text-navy'); });
     hamburgerBars.forEach(b => b.classList.replace('bg-white', 'bg-navy'));
-    if (waBtn) { waBtn.classList.add('border-navy/30', 'text-navy'); waBtn.classList.remove('border-white/25', 'text-white'); }
+    if (waBtn) {
+      waBtn.classList.remove('header-wa-active', 'border-white/25', 'text-white');
+      waBtn.classList.add('border-navy/30', 'text-navy');
+    }
   }
 
   function updateHeader() {
