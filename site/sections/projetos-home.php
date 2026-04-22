@@ -24,7 +24,7 @@
                 ['title'=>'Projeto 03',          'tag'=>'Web App',        'href'=>'#', 'img'=>'', 'span'=>''],
                 ['title'=>'Projeto 04',          'tag'=>'Landing Page',       'href'=>'#', 'img'=>'', 'span'=>''],
             ];
-            $bgs = ['bg-[#0A1128]','bg-[#141D3C]','bg-[#1a2847]','bg-[#0d1f3c]'];
+            $bgs = ['bg-[#1A1A1A]','bg-[#272727]','bg-[#2D2D2D]','bg-[#222222]'];
             foreach ($projetos as $i => $p): ?>
             <a href="<?= htmlspecialchars($p['href']) ?>" target="_blank" rel="noopener"
                class="reveal group relative block overflow-hidden aspect-[4/3] <?= $p['span'] ?> <?= $bgs[$i] ?>">

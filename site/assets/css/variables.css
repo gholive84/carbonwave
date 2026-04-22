@@ -1,12 +1,12 @@
 :root {
   --white:        #FFFFFF;
-  --navy:         #0A1128;
-  --navy-light:   #141D3C;
+  --navy:         #1A1A1A;
+  --navy-light:   #272727;
   --action:       #e30000;
   --action-dark:  #bf0000;
   --gray-light:   #F4F5F7;
   --gray-mid:     #E5E7EB;
-  --text:         #0A1128;
+  --text:         #1A1A1A;
   --text-muted:   #6B7280;
   --border:       #E5E7EB;
   --border-dark:  rgba(255,255,255,0.12);

@@ -28,7 +28,7 @@ include dirname(__DIR__) . '/includes/header.php';
         ['title' => 'Projeto 06', 'tag' => 'App Mobile',         'href' => '#', 'img' => ''],
     ];
     foreach ($projetos as $i => $p):
-        $bg = ['bg-[#0A1128]','bg-[#141D3C]','bg-[#1a2847]','bg-[#0d1f3c]','bg-[#0f172a]','bg-[#192340]'][$i % 6];
+        $bg = ['bg-[#1A1A1A]','bg-[#272727]','bg-[#2D2D2D]','bg-[#222222]','bg-[#1E1E1E]','bg-[#303030]'][$i % 6];
     ?>
     <a href="<?= htmlspecialchars($p['href']) ?>" target="_blank" rel="noopener"
        class="group relative block aspect-[4/3] overflow-hidden <?= $i % 2 === 0 ? 'md:inline-block md:w-1/2' : 'md:inline-block md:w-1/2' ?>

@@ -45,7 +45,7 @@
             <!-- Right: form -->
             <div class="reveal reveal-d2">
                 <form id="contactForm" action="/cms/leads/submit.php" method="POST"
-                      class="bg-[#141D3C] border border-white/10 rounded-[4px] p-8 flex flex-col gap-5">
+                      class="bg-[#272727] border border-white/10 rounded-[4px] p-8 flex flex-col gap-5">
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div class="flex flex-col gap-2">

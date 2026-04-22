@@ -35,7 +35,7 @@
 
             <!-- Device mockup -->
             <div class="reveal reveal-d2">
-                <div class="border-2 border-white/10 rounded-[8px] overflow-hidden bg-[#0d1a35]">
+                <div class="border-2 border-white/10 rounded-[8px] overflow-hidden bg-[#1E1E1E]">
                     <!-- Browser bar -->
                     <div class="h-8 bg-navy flex items-center gap-[6px] px-3">
                         <span class="w-[10px] h-[10px] rounded-full bg-white/15"></span>

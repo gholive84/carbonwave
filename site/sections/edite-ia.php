@@ -1,6 +1,6 @@
 <style>
 /* ── Carbonwave · edite-ia mockup ─────────────────────── */
-.cw-mock{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.35)}
+.cw-mock{background:#1E1E1E;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.35)}
 .cw-mock-head{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
 .cw-mock-chips{padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
 .cw-mock-chips::-webkit-scrollbar{display:none}

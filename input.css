@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy:        #0A1128;
-  --color-navy-light:  #141D3C;
+  --color-navy:        #1A1A1A;
+  --color-navy-light:  #272727;
   --color-action:      #e30000;
   --color-action-dark: #bf0000;
   --color-gray-light:  #F4F5F7;
@@ -50,7 +50,7 @@
 /* ---- Device frame (browser mockup) ---- */
 .device-screen {
   aspect-ratio: 16 / 9;
-  background: #0d1a35;
+  background: #1E1E1E;
   overflow: hidden;
 }
 .device-screen video,
@@ -61,7 +61,7 @@
   border-radius: 28px;
   overflow: hidden;
   aspect-ratio: 9/19;
-  background: #0d1a35;
+  background: #1E1E1E;
 }
 
 /* ---- Layout helpers ---- */
